@@ -5,7 +5,8 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
+import org.openqa.selenium.chrome.ChromeDriverInfo;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -18,10 +19,11 @@ public class Test_Steps {
 	@Given("^User is on Home Page$")
 	public void user_is_on_Home_Page() throws Throwable {
 		System.setProperty("webdriver.chrome.driver","C:\\DriverServers\\chromedriver_win32\\chromedriver.exe"); 
+		
 		driver = new ChromeDriver();
         //String exePath = "C:\\Users\\indra\\eclipse-workspace\\org.Indra\\DriverServers\\chromedriver.exe";
 		
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         driver.get("http://www.store.demoqa.com");
 		}
 
@@ -32,6 +34,8 @@ public class Test_Steps {
 
 	@When("^User enters UserName and Password$")
 	public void user_enters_UserName_and_Password() throws Throwable {
+		
+		
 		driver.findElement(By.id("username")).sendKeys("inakkala"); 	 
 	    driver.findElement(By.id("password")).sendKeys("Sairam@1234567");
 	    driver.findElement(By.name("login")).click();
