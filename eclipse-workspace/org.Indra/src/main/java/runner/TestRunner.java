@@ -8,7 +8,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		features = "C:\\Users\\indra\\eclipse-workspace\\org.Indra\\resources\\features"
-		,glue={"stepDefination"}
+		,glue={"stepDefination"},tags="indra"
 		)
 
 public class TestRunner {
